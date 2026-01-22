@@ -8,13 +8,13 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
-  splashHidden = false;
   currentImageIndex = 0;
   carouselInterval: any;
   isMobile = false;
   menuOpen = false;
   headerVisible = true;
   lastScrollTop = 0;
+  presentationAnimated = false;
   
   // Imagens do carrossel - todas as imagens de hbs exceto Image-10 e Image-11
   carouselImages: string[] = [
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/hbs/Image-14.jpeg'
   ];
 
-  // Patrocinadores - 12 espaços, 4 preenchidos conforme PDF
+  // Patrocinadores - 12 espaços, 5 preenchidos
   sponsors = [
     { 
       name: 'Garage', 
@@ -44,9 +44,21 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       logo: 'assets/patrocinadores/Logo-Sem-Fundo.png',
       url: 'https://thiers.vercel.app/'
     },
-    { name: 'Patrocinador 3', logo: null, url: null },
-    { name: 'Patrocinador 4', logo: null, url: null },
-    { name: null, logo: null, url: null }, // 5
+    { 
+      name: 'Vereador Juvenildo', 
+      logo: 'assets/patrocinadores/Pratoc-02.jpeg',
+      url: 'https://www.instagram.com/vereador_juvenildo_barboza?igsh=MWFocGVwNWZ3YmQ1dg%3D%3D&utm_source=qr'
+    },
+    { 
+      name: 'Vereador Thiago Urso', 
+      logo: 'assets/patrocinadores/Pratoc-01.jpeg',
+      url: 'https://www.instagram.com/tiagoursaooficial?igsh=MTd2Nnp6bmJweHptNA=='
+    },
+    { 
+      name: 'Vereador Caio Mãos Solidarias', 
+      logo: 'assets/patrocinadores/Pratoc-03.png',
+      url: null
+    },
     { name: null, logo: null, url: null }, // 6
     { name: null, logo: null, url: null }, // 7
     { name: null, logo: null, url: null }, // 8
@@ -56,7 +68,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     { name: null, logo: null, url: null }  // 12
   ];
 
-  filledSponsors = 4;
+  filledSponsors = 5;
 
   @ViewChild('textBlock1') textBlock1!: ElementRef;
   @ViewChild('textBlock2') textBlock2!: ElementRef;
@@ -67,26 +79,21 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.checkMobile();
     window.addEventListener('resize', () => this.checkMobile());
     
-    // Prevenir scroll durante splash screen
-    document.body.style.overflow = 'hidden';
-    
-    // Splash screen desaparece após 1 segundo
+    // Iniciar animação de apresentação
     setTimeout(() => {
-      this.splashHidden = true;
-      // Restaurar scroll após splash screen desaparecer
-      setTimeout(() => {
-        document.body.style.overflow = '';
-        // Iniciar carrossel automático se for mobile
-        if (this.isMobile) {
+      this.presentationAnimated = true;
+      // Iniciar carrossel automático após animação se for mobile
+      if (this.isMobile) {
+        setTimeout(() => {
           this.startAutoCarousel();
-        }
-      }, 800); // Aguardar transição completar
-    }, 1000);
+        }, 1600);
+      }
+    }, 100);
   }
 
   checkMobile() {
     this.isMobile = window.innerWidth <= 768;
-    if (this.isMobile && this.splashHidden) {
+    if (this.isMobile) {
       this.startAutoCarousel();
     } else {
       this.stopAutoCarousel();
