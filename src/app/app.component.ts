@@ -14,7 +14,6 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   menuOpen = false;
   headerVisible = true;
   lastScrollTop = 0;
-  presentationAnimated = false;
   
   // Imagens do carrossel - todas as imagens de hbs exceto Image-10 e Image-11
   carouselImages: string[] = [
@@ -79,16 +78,12 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     this.checkMobile();
     window.addEventListener('resize', () => this.checkMobile());
     
-    // Iniciar animação de apresentação
-    setTimeout(() => {
-      this.presentationAnimated = true;
-      // Iniciar carrossel automático após animação se for mobile
-      if (this.isMobile) {
-        setTimeout(() => {
-          this.startAutoCarousel();
-        }, 1600);
-      }
-    }, 100);
+    // Iniciar carrossel automático se for mobile
+    if (this.isMobile) {
+      setTimeout(() => {
+        this.startAutoCarousel();
+      }, 500);
+    }
   }
 
   checkMobile() {
