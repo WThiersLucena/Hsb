@@ -1,0 +1,193 @@
+<!-- Splash Screen -->
+<div class="splash-screen" [class.hidden]="splashHidden">
+  <img src="assets/derivados/apresent-01.jpg" alt="Henrique Alexandre - Jiu Jitsu" />
+</div>
+
+<!-- Conteúdo Principal -->
+<main class="main-content" [class.visible]="splashHidden">
+  <!-- Header com Menu -->
+  <header class="main-header" [class.header-hidden]="!headerVisible">
+    <nav class="header-nav">
+      <div class="header-logo">
+        <span>Henrique Santos</span>
+      </div>
+      <ul class="header-menu" [class.menu-open]="menuOpen">
+        <li><a (click)="scrollToSection('sobre'); closeMenu(); $event.preventDefault()" class="menu-link">Sobre</a></li>
+        <li><a (click)="scrollToSection('galeria'); closeMenu(); $event.preventDefault()" class="menu-link">Galeria</a></li>
+        <li><a (click)="scrollToSection('patrocinadores'); closeMenu(); $event.preventDefault()" class="menu-link">Patrocinadores</a></li>
+      </ul>
+      <button class="hamburger-menu" (click)="toggleMenu()" [class.active]="menuOpen" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Seção Hero com Foto e Dados Pessoais -->
+  <section class="hero-section" id="sobre">
+    <div class="hero-content">
+      <div class="profile-image-container">
+        <img src="assets/hbs/Image-10.jpeg" alt="Henrique Alexandre" class="profile-image" />
+        <img src="assets/hbs/Image-11.jpeg" alt="Henrique Alexandre - Hover" class="profile-image-hover" />
+      </div>
+      <div class="profile-info">
+        <h1 class="profile-name">Henrique Alexandre Brasil dos Santos</h1>
+        <div class="profile-details">
+          <p class="profile-age">31 anos (Adulto - Master I)</p>
+          <p class="profile-origin">Natural de Arujá-SP</p>
+          <p class="profile-category">Atleta de Jiu Jitsu - Categoria Super Pesado</p>
+          <div class="profile-achievements">
+            <p class="achievement">🏆 Vice-Campeão Paulista 2025 CBJJE (Faixa Branca)</p>
+            <p class="achievement">🥋 Atleta Graduado Faixa Azul em [06/2025]</p>
+          </div>
+          <p class="profile-team">Equipe Jiu Jitsu Lab - Life Brothers - Arujá-SP</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="YouTube">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Textos com Animações ao Scroll -->
+  <section class="text-section">
+    <div class="text-block text-block-1" #textBlock1>
+      <h2 class="section-title">Disciplina que une Trabalho e Tatame</h2>
+      <p>
+        Meu nome é Henrique Alexandre, tenho 31 anos e sou atleta de Jiu-Jitsu na categoria Master 1. 
+        Minha trajetória no esporte é movida por um pilar inegociável: a disciplina. Diferente de atletas 
+        que se dedicam exclusivamente ao treino, eu concilio diariamente uma rotina profissional rigorosa 
+        com a preparação de alto rendimento. Entendo que o foco e a resiliência necessários para entregar 
+        resultados no trabalho são os mesmos que me levam a buscar a excelência no tatame.
+      </p>
+    </div>
+
+    <div class="text-block text-block-2" #textBlock2>
+      <h2 class="section-title">Evolução Constante e Resultados Reais</h2>
+      <p>
+        Não acredito em atalhos. Em 2025, provei minha competitividade ao conquistar o título de 
+        Vice-Campeão Paulista (CBJJE) ainda na faixa branca. Esse pódio, em um do torneio muito disputado 
+        do estado, foi a validação do meu esforço e o degrau que me levou à faixa azul. Hoje, graduado e 
+        com a experiência de quem já sentiu a pressão das finais, foco minha energia para representar 
+        Arujá no maior desafio da minha carreira: o Campeonato Brasileiro No-Gi da CBJJ.
+      </p>
+    </div>
+
+    <div class="text-block text-block-3" #textBlock3>
+      <h2 class="section-title">Por que investir na minha jornada?</h2>
+      <p>
+        Como atleta Master, não busco apenas patrocínio, mas parcerias sólidas. Represento um público 
+        maduro, focado em saúde e superação. Ao apoiar minha caminhada rumo ao Brasileiro, sua marca 
+        não estará apenas em um uniforme, mas associada a um estilo de vida de integridade, trabalho 
+        duro e à representação orgulhosa da nossa cidade no cenário nacional.
+      </p>
+    </div>
+  </section>
+
+  <!-- Carrossel de Imagens -->
+  <section class="carousel-section" id="galeria">
+    <h2 class="section-title">Galeria</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn carousel-btn-prev" (click)="previousImage()" aria-label="Imagem anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" [style.transform]="'translateX(-' + currentImageIndex * 100 + '%)'">
+          @for (image of carouselImages; track $index) {
+            <div class="carousel-slide">
+              <img [src]="image" [alt]="'Imagem ' + ($index + 1)" />
+            </div>
+          }
+        </div>
+      </div>
+      <button class="carousel-btn carousel-btn-next" (click)="nextImage()" aria-label="Próxima imagem">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
+      <div class="carousel-indicators">
+        @for (image of carouselImages; track $index) {
+          <button 
+            class="indicator" 
+            [class.active]="$index === currentImageIndex"
+            (click)="goToImage($index)"
+            [attr.aria-label]="'Ir para imagem ' + ($index + 1)"
+          ></button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Seção de Patrocinadores -->
+  <section class="sponsors-section" id="patrocinadores">
+    <h2 class="section-title">Patrocinadores</h2>
+    <div class="sponsors-grid">
+      @for (sponsor of sponsors; track $index) {
+        <div class="sponsor-card" [class.has-link]="sponsor.url">
+          @if (sponsor.logo) {
+            @if (sponsor.url) {
+              <a [href]="sponsor.url" target="_blank" rel="noopener noreferrer" class="sponsor-link">
+                <img 
+                  [src]="sponsor.logo" 
+                  [alt]="sponsor.name || 'Patrocinador ' + ($index + 1)"
+                  [class.thiers-logo]="sponsor.name === 'Soluções em Tecnologia'"
+                />
+              </a>
+            } @else {
+              <img 
+                [src]="sponsor.logo" 
+                [alt]="sponsor.name || 'Patrocinador ' + ($index + 1)"
+                [class.thiers-logo]="sponsor.name === 'Soluções em Tecnologia'"
+              />
+            }
+          } @else {
+            <div class="sponsor-placeholder">
+              <span>Logo</span>
+            </div>
+          }
+          @if (sponsor.name) {
+            <p class="sponsor-name">{{ sponsor.name }}</p>
+          }
+        </div>
+      }
+    </div>
+    <div class="sponsors-info">
+      <p class="sponsors-status">Status: {{ filledSponsors }}/12 Cotas Preenchidas</p>
+      <p class="sponsors-note">
+        Sua marca será estampada na Camisa de Pódio, utilizada no momento da premiação oficial da CBJJ, 
+        garantindo exposição em fotos e registros históricos da competição.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-text-container">
+        <p class="footer-text">© 2026 - Thiers Soluções em Tecnologia. Todos os direitos reservados.</p>
+      </div>
+      <div class="footer-qrcode">
+        <a href="https://thiers.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="QR Code Thiers">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://thiers.vercel.app/" alt="QR Code Thiers" class="qrcode-image" />
+        </a>
+      </div>
+    </div>
+  </footer>
+</main>
