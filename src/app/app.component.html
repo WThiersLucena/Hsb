@@ -146,6 +146,7 @@
                   [src]="sponsor.logo" 
                   [alt]="sponsor.name || 'Patrocinador ' + ($index + 1)"
                   [class.thiers-logo]="sponsor.name === 'Soluções em Tecnologia'"
+                  [class.betinho-logo]="sponsor.name === 'Betinho'"
                 />
               </a>
             } @else {
@@ -153,6 +154,7 @@
                 [src]="sponsor.logo" 
                 [alt]="sponsor.name || 'Patrocinador ' + ($index + 1)"
                 [class.thiers-logo]="sponsor.name === 'Soluções em Tecnologia'"
+                [class.betinho-logo]="sponsor.name === 'Betinho'"
               />
             }
           } @else {
@@ -167,11 +169,25 @@
       }
     </div>
     <div class="sponsors-info">
-      <p class="sponsors-status">Status: {{ filledSponsors }}/12 Cotas Preenchidas</p>
+      <p class="sponsors-status">Status: {{ filledSponsors }}/16 Cotas Preenchidas</p>
       <p class="sponsors-note">
         Sua marca será estampada na Camisa de Pódio, utilizada no momento da premiação oficial da CBJJ, 
         garantindo exposição em fotos e registros históricos da competição.
       </p>
+    </div>
+    <div class="behind-scenes-section">
+      <h2 class="behind-scenes-title">Bastidores dos trabalhos</h2>
+      <div class="video-container">
+        <video 
+          class="behind-scenes-video" 
+          controls 
+          preload="metadata"
+          poster=""
+        >
+          <source src="assets/hbs/Treino-Misto.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+      </div>
     </div>
   </section>
 

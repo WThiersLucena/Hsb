@@ -31,7 +31,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     'assets/hbs/Image-14.jpeg'
   ];
 
-  // Patrocinadores - 12 espaços, 5 preenchidos
+  // Patrocinadores - 16 preenchidos
   sponsors = [
     { 
       name: 'Garage', 
@@ -44,9 +44,24 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       url: 'https://thiers.vercel.app/'
     },
     { 
+      name: 'Styllus Supermercados', 
+      logo: 'assets/patrocinadores/Styllus.png',
+      url: null
+    },
+    { 
       name: 'Vereador Juvenildo', 
       logo: 'assets/patrocinadores/Pratoc-02.jpeg',
       url: 'https://www.instagram.com/vereador_juvenildo_barboza?igsh=MWFocGVwNWZ3YmQ1dg%3D%3D&utm_source=qr'
+    },
+    { 
+      name: 'FAMILIA CUIDA DE FAMILIA', 
+      logo: 'assets/patrocinadores/FarmaConde.png',
+      url: null
+    },
+    { 
+      name: 'Vulkanus', 
+      logo: 'assets/patrocinadores/Vulkanus escrita.png',
+      url: null
     },
     { 
       name: 'Vereador Thiago Urso', 
@@ -58,16 +73,49 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
       logo: 'assets/patrocinadores/Pratoc-03.png',
       url: null
     },
-    { name: null, logo: null, url: null }, // 6
-    { name: null, logo: null, url: null }, // 7
-    { name: null, logo: null, url: null }, // 8
-    { name: null, logo: null, url: null }, // 9
-    { name: null, logo: null, url: null }, // 10
-    { name: null, logo: null, url: null }, // 11
-    { name: null, logo: null, url: null }  // 12
+    { 
+      name: 'IdnLabs', 
+      logo: 'assets/patrocinadores/Idn.jpg',
+      url: null
+    },
+    { 
+      name: 'GS-Consultoria Fitness', 
+      logo: 'assets/patrocinadores/GS.png',
+      url: null
+    },
+    { 
+      name: 'Bola Venus', 
+      logo: 'assets/patrocinadores/BolaVenus.jpeg',
+      url: null
+    },
+    { 
+      name: 'THR-Estetica', 
+      logo: 'assets/patrocinadores/THR.jpeg',
+      url: null
+    },
+    { 
+      name: 'Betinho', 
+      logo: 'assets/patrocinadores/Betinho.PNG',
+      url: null
+    },
+    { 
+      name: 'SonnerFit', 
+      logo: 'assets/patrocinadores/SonnerFit.jpeg',
+      url: null
+    },
+    { 
+      name: 'Tokai', 
+      logo: 'assets/patrocinadores/Tokai.jpeg',
+      url: null
+    },
+    { 
+      name: '1327 Estetica', 
+      logo: 'assets/patrocinadores/1327.png',
+      url: null
+    }
   ];
 
-  filledSponsors = 5;
+  filledSponsors = 16;
 
   @ViewChild('textBlock1') textBlock1!: ElementRef;
   @ViewChild('textBlock2') textBlock2!: ElementRef;
